@@ -1,12 +1,12 @@
-import asyncWrapper from "@/lib/utils/middleware/async";
+// import asyncWrapper from "@/lib/utils/middleware/async";
 import User from "@/lib/utils/models/authSchema";
-import fs from 'fs'
-import sharp from 'sharp'
-import path from 'path'
+// import fs from 'fs'
+// import sharp from 'sharp'
+// import path from 'path'
 import StatusCodes from 'http-status-codes'
 import connectToDatabase from "@/lib/utils/connectDB/connectDb";
 import {BadRequest,NotFound, UnauthenticatedError} from '../../../../lib/utils/errors/index'
-import sanitizeHTML from "sanitize-html";
+// import sanitizeHTML from "sanitize-html";
 import multer from "multer";
 const upload=multer()
 export async function  POST(req){
