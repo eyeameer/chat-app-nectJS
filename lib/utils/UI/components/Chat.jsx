@@ -115,7 +115,7 @@ setInput(e.target.value)
 </div>
            <div id='messages' className=' m-5 grid grid-rows flex-grow-1'>
 
-            {chatState.map((mssg)=>mssg.id==='unknown'?<div className='w-full'> <ul className='my-2 w-full flex justify-center '><li className='inline-block bg-green-900 rounded-2xl  py-1  px-2'>{mssg.message}</li></ul> </div>:mssg.id!==props.id?<div > <ul className='my-2 text-right'><li className='inline-block bg-green-600 rounded-2xl  py-1  px-2'>{mssg.message}</li></ul> </div>:<ul className=' my-2'><li className='inline-block bg-green-800 rounded-full py-1  px-2'>{mssg.message}</li></ul>)}
+            {chatState.map((mssg)=>mssg.id==='unknown'?<div  className='w-full'> <ul className='my-2 w-full flex justify-center '><li className='inline-block bg-green-900 rounded-2xl  py-1  px-2'>{mssg.message}</li></ul> </div>:mssg.id!==props.id?<div > <ul className='my-2 text-right'><li className='inline-block bg-green-600 rounded-2xl  py-1  px-2'>{mssg.message}</li></ul> </div>:<ul className=' my-2'><li className='inline-block bg-green-800 rounded-full py-1  px-2'>{mssg.message}</li></ul>)}
             <div ref={dummy}></div>
             
  </div >

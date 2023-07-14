@@ -90,7 +90,7 @@ setIsLoading(false)
       try {
         if(d.name){
           setIsLoading(true)
-           res=await Axios.post('http://localhost:3000/api/register',d)
+           res=await Axios.post('/api/register',d)
            setIsLoading(false)
            localStorage.setItem('id',res.data.id)
            localStorage.setItem('name',res.data.name)
@@ -101,8 +101,8 @@ setIsLoading(false)
         }
         else{
           setIsLoading(true)
-        //  res=await Axios.post('http://localhost:3000/api/login',d)
-         res=await Axios.post('http://localhost:3000/api/login',d)
+        //  res=await Axios.post('/api/login',d)
+         res=await Axios.post('/api/login',d)
        
          localStorage.setItem('name',res.data.name)
     
@@ -118,7 +118,7 @@ setIsLoading(false)
         }
         // setLoginData(resi.data)
         // console.log(loginData)
-        const ress=await Axios.get(`http://localhost:3000/api/getFriends/${res.data.id}`)
+        const ress=await Axios.get(`/api/getFriends/${res.data.id}`)
         setMain(()=>ress.data.friends.map((friend)=><div  key={friend.theirId} onClick={(e)=>switchChats(e,friend.theirId,friend.friendName,friend.photo)}   id={friend.theirId} className='flex flex-cols border-double border-2 p-3 rounded-full items-center gap-10 mt-6 border-slate-500'>
         <img onClick={(e)=>{
           e.stopPropagation()
@@ -161,9 +161,9 @@ setIsLoading(false)
     setIsLoading(true)
     
  try {
-       // const res=await Axios.post('http://localhost:3000/api/addFriend',ob)
-       const res=await Axios.post('http://localhost:3000/api/addFriend',ob)
-       const ress=await Axios.get(`http://localhost:3000/api/getFriends/${res.data.myId}`)
+       // const res=await Axios.post('/api/addFriend',ob)
+       const res=await Axios.post('/api/addFriend',ob)
+       const ress=await Axios.get(`/api/getFriends/${res.data.myId}`)
    
    setSearching(false)
    
@@ -235,7 +235,7 @@ setIsLoading(false)
      }
     setIsLoading(true)
     const number=e.target.parentElement.childNodes[0].value
-    const url=`http://localhost:3000/api/search/${number}`
+    const url=`/api/search/${number}`
 try{
   const user=await Axios.get(url)
   

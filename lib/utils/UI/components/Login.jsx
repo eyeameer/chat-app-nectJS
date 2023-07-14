@@ -60,7 +60,7 @@ reader.readAsDataURL(file);
 reader.onload = async () => {
 const base64 = reader.result;
 // Send the base64 encoded photo to the API endpoint for processing
-const res = await Axios.post('http://localhost:3000/api/uploadProfile', { photo: base64,id:localStorage.getItem('id')}, {headers: {
+const res = await Axios.post('/api/uploadProfile', { photo: base64,id:localStorage.getItem('id')}, {headers: {
    'Content-Type': 'application/json',
    
   }})
@@ -82,7 +82,7 @@ const res = await Axios.post('http://localhost:3000/api/uploadProfile', { photo:
    
         // try {
             
-        //     const res=await Axios.post('http://localhost:3000/api/uploadProfile',formData, { headers: { "Content-Type": "multipart/form-data" } })
+        //     const res=await Axios.post('/api/uploadProfile',formData, { headers: { "Content-Type": "multipart/form-data" } })
           
         //     props.changeIsloggedIn(res.data.photo)
         
